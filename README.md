@@ -1,29 +1,19 @@
 # template_project
 
-## Overview
+## local env setup
+```bash
+conda create -n mlops_env python=3.10.12
+conda activate mlops_env
 
-This is your new Kedro project for the [spaceflights tutorial](https://docs.kedro.org/en/stable/tutorial/spaceflights_tutorial.html) and the extra tutorial sections on [visualisation with Kedro-Viz](https://docs.kedro.org/projects/kedro-viz/en/stable/kedro-viz_visualisation.html) and [experiment tracking with Kedro-Viz](https://docs.kedro.org/projects/kedro-viz/en/stable/experiment_tracking.html) with PySpark setup, which was generated using `kedro 0.19.1`.
-
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
-
-## Rules and guidelines
-
-In order to get the best out of the template:
-
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://docs.kedro.org/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+make install_develop
+```
 
 ## How to install dependencies
 
-Declare any dependencies in `requirements.txt` for `pip` installation.
+1. Add the package to `src/requirements.in`
+2. Run `make _compile` to create new `src/requirements.txt` file
+3. Run `make install_develop` to install new dependencies from `src/requirements.txt`
 
-To install them, run:
-
-```
-pip install -r requirements.txt
-```
 
 ## How to run your Kedro pipeline
 
